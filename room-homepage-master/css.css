@@ -1,0 +1,149 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  height: 10vh;
+  align-items: center;
+}
+header {
+  background-image: url("./images/mobile-image-hero-1.jpg");
+  height: 42vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  transition: all 0.75s ease;
+}
+.arrows {
+  display: flex;
+  width: 30%;
+  justify-content: space-around;
+  height: 77px;
+  align-items: center;
+  /* justify-self: flex-end; */
+  /* margin: 0px; */
+  position: absolute;
+  background-color: black;
+  left: 261px;
+  bottom: 499px;
+}
+.arrow-left,
+.arrow-right {
+  padding: 25px 22px;
+}
+.hero {
+  padding: 50px 32px;
+}
+.header-hero {
+  margin-bottom: 30px;
+  font-size: 29px;
+}
+.text {
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 14px;
+  text-align: left;
+  color: hsl(0, 0%, 63%);
+  transition: all 1s ease;
+}
+.shop-now {
+  display: flex;
+  margin: 50px 0px;
+  justify-content: space-between;
+  height: 30px;
+}
+.shop-now-head {
+  font-weight: 500;
+  color: hsl(0, 0%, 27%);
+  letter-spacing: 7px;
+}
+.img {
+  overflow: hidden;
+}
+.image-dark {
+  width: auto;
+}
+.about-furniture {
+  margin-top: 50px;
+  padding: 0px 32px;
+}
+.about-head {
+  text-transform: uppercase;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.about-text {
+  margin-top: 40px;
+  line-height: 24px;
+  font-size: 15px;
+  color: hsl(0, 0%, 63%);
+  font-weight: 500;
+}
+.light {
+  width: auto;
+}
+.light-image {
+  overflow: hidden;
+  margin-top: 50px;
+  padding-bottom: 0px;
+  height: 100%;
+}
+.cross {
+  display: none;
+  z-index: 200;
+  position: relative;
+  top: 39%;
+  left: -8%;
+  color: black;
+}
+.menu-options {
+  position: absolute;
+  right: 0;
+  background-color: white;
+  height: 151px;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 375px;
+  transform: translateY(-200px);
+  transition: all 1s ease;
+  z-index: 2;
+}
+.nav-options {
+  text-decoration: none;
+  color: black;
+  margin-left: 20px;
+  font-weight: 600;
+}
+.contact {
+  margin-right: 20px;
+}
+.hamburger {
+  display: block;
+  z-index: 2;
+}
+.open {
+  transform: translateY(0px);
+}
+.cross-open {
+  display: block;
+}
+.hamburger-close {
+  display: none;
+}
+.overlay {
+  height: 214vh;
+  width: 100vw;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.5;
+  position: absolute;
+  display: none;
+}
+.overlay-open {
+  display: block;
+}
