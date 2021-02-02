@@ -4,6 +4,7 @@ const desc = document.querySelector("#desc");
 const header = document.querySelector("#header");
 const headHero = document.querySelector("#head-hero");
 var counter = 0;
+var body = document.getElementsByTagName("BODY")[0];
 var object = [
   {
     description: `We provide unmatched quality, comfort, and style for property owners across the country.
@@ -27,7 +28,19 @@ var object = [
     img: `./images/mobile-image-hero-3.jpg`,
   },
 ];
+var object2 = [
+  {
+    img: `./images/desktop-image-hero-1.jpg`,
+  },
+  {
+    img: `./images/desktop-image-hero-2.jpg`,
+  },
+  {
+    img: `./images/desktop-image-hero-3.jpg`,
+  },
+];
 var reverse = 0;
+var x = window.matchMedia("(min-width: 395px)");
 //automatic-----------------
 setInterval(function () {
   counter += 1;
@@ -37,7 +50,11 @@ setInterval(function () {
   if (counter <= 3) {
     desc.innerHTML = object[counter].description;
     headHero.innerHTML = object[counter].heading;
-    header.style.backgroundImage = "url(' " + object[counter].img + "')";
+    if (x.matches) {
+      header.style.backgroundImage = "url(' " + object2[counter].img + "')";
+    } else {
+      header.style.backgroundImage = "url(' " + object[counter].img + "')";
+    }
   }
   console.log("forward", counter);
 }, 7000);
@@ -50,7 +67,11 @@ arrowRight.addEventListener("click", function () {
   if (counter <= 3) {
     desc.innerHTML = object[counter].description;
     headHero.innerHTML = object[counter].heading;
-    header.style.backgroundImage = "url(' " + object[counter].img + "')";
+    if (x.matches) {
+      header.style.backgroundImage = "url(' " + object2[counter].img + "')";
+    } else {
+      header.style.backgroundImage = "url(' " + object[counter].img + "')";
+    }
   }
   console.log("forward", counter);
 });
@@ -63,7 +84,11 @@ arrowLeft.addEventListener("click", function () {
   if (counter <= 3) {
     desc.innerHTML = object[counter].description;
     headHero.innerHTML = object[counter].heading;
-    header.style.backgroundImage = "url(' " + object[counter].img + "')";
+    if (x.matches) {
+      header.style.backgroundImage = "url(' " + object2[counter].img + "')";
+    } else {
+      header.style.backgroundImage = "url(' " + object[counter].img + "')";
+    }
   }
   console.log("reverse", counter);
 });
@@ -79,10 +104,12 @@ hamburger.addEventListener("click", function () {
   hamburger.classList.add("hamburger-close");
   cross.classList.add("cross-open");
   overlay.classList.add("overlay-open");
+  body.style.overflow = "hidden";
 });
 cross.addEventListener("click", function () {
   menu.classList.remove("open");
   hamburger.classList.remove("hamburger-close");
   cross.classList.remove("cross-open");
   overlay.classList.remove("overlay-open");
+  body.style.overflow = "visible";
 });
